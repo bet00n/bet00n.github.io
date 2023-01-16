@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&display=swap');
+
+:root {
+    --main: #0D0D0D;
+    --secondary: #F3CB8A;
+    --mainFont:'Fraunces', serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--mainFont);
+}
+
+body {
+    background: var(--main);
+    color: var(--secondary);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* intro */
+
+.intro {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 4rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.intro div {
+    height: 50vh;
+    background-color: var(--main);
+}
+
+.intro:hover div {
+    letter-spacing: 1rem;
+    transition: all 1s;
+}
+
+.top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.slide-top {
+    transition: all 1s ease-in-out;
+    transform: translateY(-1000px);
+}
+
+.slide-bottom {
+    transition: all 1s ease-in-out;
+    transform: translateY(1000px);
+}
+
+/* main */
+
+main {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-rows: 1fr;
+    gap: 2rem;
+    font-size: 3rem;
+}
+
+main > div {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 /1;
+    display: flex;
+    cursor: pointer;
+}
+
+.cover {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--secondary);
+    transition: transform 1s;
+}
+
+.about-me-btn,
+.about-me-btn > .cover {
+    border-top-left-radius: 100%;
+    align-items: flex-end;
+}
+
+.about-me-btn:hover > .cover:not(.cover-page) {
+    transform: translate(-100%, -100%) rotate(180deg);
+}
+
+.hobbies-btn,
+.hobbies-btn > .cover {
+    border-top-right-radius: 100%;
+    align-items: flex-end;
+}
+
+.hobbies-btn:hover > .cover:not(.cover-page) {
+    transform: translate(100%,-100%) rotate(180deg);;
+}
+
+.skills-btn,
+.skills-btn > .cover {
+    border-bottom-left-radius: 100%;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.skills-btn:hover > .cover:not(.cover-page) {
+    transform: translate(-100%,100%) rotate(180deg);;
+}
+
+.projects-btn,
+.projects-btn > .cover {
+    border-bottom-right-radius: 100%;
+    align-items: flex-start;
+}
+
+.projects-btn:hover > .cover:not(.cover-page) {
+    transform: translate(100%,100%) rotate(180deg);;
+}
+
+.cover-page {
+    transform: scale(10);
+    transition: all 2s;
+    background-color: var(--main);
+    z-index: 1;
+}
+
+/* sections */
+
+/* about me */
+
+section {
+    display: none;
+    animation: fade-in 2s forwards;
+    height: 100vh;
+    background-color: var(--main);
+    color: var(--secondary);
+    z-index: 10;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
