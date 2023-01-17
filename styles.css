@@ -72,6 +72,10 @@ main {
     font-size: 3rem;
 }
 
+.hidden {
+    display: none;
+}
+
 main > div {
     position: relative;
     width: 100%;
@@ -130,23 +134,102 @@ main > div {
 }
 
 .cover-page {
-    transform: scale(10);
-    transition: all 2s;
+    transform: scale(15);
+    transition: all 1.5s;
     background-color: var(--main);
     z-index: 1;
 }
 
 /* sections */
 
-/* about me */
-
 section {
+    position: absolute;
     display: none;
     animation: fade-in 2s forwards;
     height: 100vh;
     background-color: var(--main);
     color: var(--secondary);
     z-index: 10;
+    padding: 5rem;
+}
+
+.close-section-btn {
+    position: fixed;
+    height: 4rem;
+    aspect-ratio: 1 / 1;
+    top: 3rem;
+    left: 3rem;
+    font-size: 3rem;
+    background-color: var(--main);
+    color: var(--secondary);
+    border: none;
+    cursor: pointer;
+}
+
+.slide-wide {
+    transform: translateX(-2000px);
+    transition: transform 2s;
+}
+
+/* about me */
+
+
+/* hobbies */
+
+.hobbies .container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card {
+    background-color: transparent;
+    
+    height: 50%;
+    width: 25%;
+    margin: 1rem;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    border: 1px solid var(--secondary);
+    border-radius: 2rem;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform .8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+.flip-card img {
+    width: 100%;
+}
+
+.flip-card strong {
+    color: #044794;
 }
 
 @keyframes fade-in {

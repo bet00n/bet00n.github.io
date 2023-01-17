@@ -8,7 +8,12 @@ const skillsBtn = document.querySelector('.skills-btn');
 const skillsSection = document.querySelector('.skills');
 const projectsBtn = document.querySelector('.projects-btn');
 const projectsSection = document.querySelector('.projects');
+const closeSectionBtns = document.querySelectorAll('.close-section-btn');
 
+
+const toggleMain = () => {
+    main.classList.toggle('hidden');
+}
 
 intro.addEventListener('click',() => {
     intro.querySelector('.top').classList.add('slide-top');
@@ -18,29 +23,42 @@ intro.addEventListener('click',() => {
     }, 300);
 })
 
-const coverPage = (e, section) => {
+const openSection = (e, section) => {
     const targetCover = e.target;
     console.log(targetCover);
     targetCover.querySelector('.cover').classList.add('cover-page');
     setTimeout(() => {
-        main.style.display = 'none';
+        toggleMain();
         targetCover.querySelector('.cover').classList.remove('cover-page');
         section.style.display = 'block';
     }, 1000)
 }
 
 aboutMeBtn.addEventListener('click', (e) => {
-    coverPage(e, aboutMeSection);
+    openSection(e, aboutMeSection);
 });
 
 hobbiesBtn.addEventListener('click', (e) => {
-    coverPage(e, hobbiesSection);
+    openSection(e, hobbiesSection);
 })
 
 skillsBtn.addEventListener('click', (e) => {
-    coverPage(e, skillsSection);
+    openSection(e, skillsSection);
 })
 
 projectsBtn.addEventListener('click', (e) => {
-    coverPage(e, projectsSection);
+    openSection(e, projectsSection);
+})
+
+closeSectionBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        const targetSection = e.target.closest('section');
+        console.log(targetSection);
+        targetSection.classList.add('slide-wide');
+        toggleMain();
+        setTimeout(() => {
+            targetSection.style.display = 'none';
+            targetSection.classList.remove('slide-wide');
+        },2000);
+    })
 })
