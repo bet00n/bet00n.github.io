@@ -180,17 +180,17 @@ section {
     height: 100vh;
     width: 100vw;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
 .flip-card {
     background-color: transparent;
-    
     height: 50%;
-    width: 25%;
+    width: min(40rem, 15%);
     margin: 1rem;
     perspective: 1000px;
+    cursor: pointer;
 }
 
 .flip-card-inner {
@@ -204,9 +204,13 @@ section {
     transform-style: preserve-3d;
 }
 
-.flip-card:hover .flip-card-inner {
+.rotated {
     transform: rotateY(180deg);
 }
+
+/* .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+} */
 
 .flip-card-front, .flip-card-back {
     position: absolute;
@@ -228,9 +232,35 @@ section {
     width: 100%;
 }
 
-.flip-card strong {
+.chelsea {
     color: #044794;
 }
+
+.marvel {
+    background: -webkit-linear-gradient(#E6030C, #FFFFFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.boardgames {
+    color: rgb(94, 18, 18);
+}
+
+.flip-card a {
+    text-decoration: none;
+    color: rgb(116, 70, 93);
+}
+
+.flip-card a:hover {
+    text-decoration: underline;
+    color: rgb(185, 111, 148);
+}
+
+/* skills */
+
+
+
+/* keyframes */
 
 @keyframes fade-in {
     from {

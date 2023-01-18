@@ -62,3 +62,10 @@ closeSectionBtns.forEach((btn) => {
         },2000);
     })
 })
+
+
+document.querySelectorAll('.flip-card').forEach((card) => {
+    card.addEventListener('click', (e) => {
+        e.target.closest('.flip-card-inner').classList.toggle('rotated');
+    })
+})
