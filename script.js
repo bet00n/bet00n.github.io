@@ -9,7 +9,7 @@ const skillsSection = document.querySelector(".skills");
 const projectsBtn = document.querySelector(".projects-btn");
 const projectsSection = document.querySelector(".projects");
 const closeSectionBtns = document.querySelectorAll(".close-section-btn");
-const skillsBtns = document.querySelectorAll(".skill");
+const skillsBtns = document.querySelectorAll(".skill i");
 
 const updateTime = () => {
   const startDate = new Date("6/7/2022");
@@ -81,8 +81,9 @@ document.querySelectorAll(".flip-card").forEach((card) => {
 });
 
 
-skillsBtn.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    console.log(e);
-  })
-})
+skillsBtns.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    console.log(e.target.nextElementSibling);
+    e.target.nextElementSibling.style.display = 'block';
+  });
+});

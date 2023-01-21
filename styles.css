@@ -308,10 +308,10 @@ section {
 .skill {
     padding: 1rem;
     font-size: 3rem;
-    border: 1px solid red;
     border-radius: 25px;
     display: flex;
     gap: 1rem;
+    align-items: center;
 }
 
 .skill i {
