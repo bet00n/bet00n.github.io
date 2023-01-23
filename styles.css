@@ -196,6 +196,7 @@ section {
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: 2rem;
 }
 
@@ -315,7 +316,7 @@ section {
 }
 
 .skill i {
-    animation: wiggle 400ms 2s 6;
+    animation: wiggle 300ms 2s 4;
     cursor: pointer;
 }
 

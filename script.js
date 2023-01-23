@@ -19,7 +19,7 @@ const updateTime = () => {
   document.querySelector(".counter").innerHTML = diffDays;
   setTimeout(() => {
     updateTime();
-  }, 1000);
+  }, 60000);
 };
 
 updateTime();
